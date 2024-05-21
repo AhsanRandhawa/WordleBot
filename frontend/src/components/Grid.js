@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 const colorStates = [
   { color: 'grey', label: 'Incorrect', code: 'B' },
@@ -7,7 +6,18 @@ const colorStates = [
   { color: 'green', label: 'Correct', code: 'G' }
 ];
 
-export const Grid = ({ rows, isInteractive, handleCellClick, letters }) => {
+/**
+ * Grid component to display the Wordle grid.
+ * @param {Object} props - Component props
+ * @param {Array} props.rows - The rows of the grid, where each row is an array of cell states
+ * @param {boolean} props.isInteractive - Whether the grid cells are interactive (clickable)
+ * @param {Function} [props.handleCellClick] - Function to handle cell click events (only needed if isInteractive is true)
+ * @param {Array} [props.letters] - The letters to display in each cell
+ * @returns {JSX.Element}
+ */
+
+function Grid ({ rows, isInteractive, handleCellClick, letters })
+{
   return (
     <div style={{ display: 'grid', gap: '2px' }}>
       {rows.map((row, rowIndex) => (
@@ -35,4 +45,7 @@ export const Grid = ({ rows, isInteractive, handleCellClick, letters }) => {
       ))}
     </div>
   );
-};
+}
+
+export default Grid;
+
