@@ -33,7 +33,7 @@ public class WordleController {
             String guess = gf.getGuess();
             String feedback = gf.getFeedback();
             possibleWords = removeNAWords(possibleWords, guess, feedback);
-
+            System.out.println(guess + ", " + feedback);
             System.out.println("possibleWords:");
             for(String word: possibleWords)
             {
@@ -58,8 +58,8 @@ public class WordleController {
 
 
     private String generateGuess(HashSet<String> possibleWords) {
-        String bestGuess = "";
-        String bestGuessForPossibleWords = "";
+        String bestGuess = "NA";
+        String bestGuessForPossibleWords = "NA";
         double bestAlphaValue = Double.MAX_VALUE;
         double bestAlphaValueForPossibleWords = Double.MAX_VALUE;
 
